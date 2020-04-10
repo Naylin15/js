@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Notes</title>
+</head>
+<body>
+    <header></header>
+    <section class="add-note">
+        <form id="form-add">
+            <input type="text" name="noteTitle" id="noteTitle">
+            <input type="text" name="noteDescription" id="noteDescription">
+            <input type="button" onclick="addNote()" value="Add">
+        </form>
+    </section>
+    <section class="notes" id="notes">
+    </section>
+</body>
+<script>
+var notes = [];
+function addNote() {    
+    var noteTitle = document.getElementById('noteTitle').value;
+    var noteDescription = document.getElementById('noteDescription').value;
+
+    notes.push({
+        title: noteTitle,
+        description: noteDescription
+    })
+    document.getElementById('form-add').reset();
+    displayNotes();
+
+}
+
+function displayNotes() {
+    for (i=0; i < notes.length; i++) {
+        var noteContainer = document.createElement("article");
+        noteContainer.setAttribute("class", "note");
+        noteContainer.setAttribute("id", i)
+        document.getElementById('notes').appendChild(noteContainer);
+
+        var titleTag = document.createElement("h2");
+        var titleContent = document.createTextNode(notes[i].title);
+        var titleNote = titleTag.appendChild(titleContent);
+        
+        var descriptionTag = document.createElement("p");
+        var descriptionContent = document.createTextNode(notes[i].description);
+        var descriptionNote = descriptionTag.appendChild(descriptionContent);
+
+        document.getElementById(i).appendChild(titleTag);
+        document.getElementById(i).appendChild(descriptionTag);
+    }
+
+}
+
+
+
+
+
+</script>
+</html>
