@@ -1,3 +1,26 @@
 body {
-    background-color: blueviolet;
+    background-color: #fcfd99;
+}
+
+.note {
+    display: flex;
+    border-bottom: 1px solid #333;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.note h2 {
+    width: 30%;
+}
+
+.note p {
+    width: 30%;
+}
+
+.removeNote {
+    border: 1px solid #333;
+    height: 15px;
+    width: 20px;
 }

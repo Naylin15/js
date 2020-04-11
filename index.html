@@ -19,10 +19,10 @@
     </section>
 </body>
 <script>
-var notes = [];
+let notes = [];
 function addNote() {    
-    var noteTitle = document.getElementById('noteTitle').value;
-    var noteDescription = document.getElementById('noteDescription').value;
+    let noteTitle = document.getElementById('noteTitle').value;
+    let noteDescription = document.getElementById('noteDescription').value;
 
     notes.push({
         title: noteTitle,
@@ -34,28 +34,49 @@ function addNote() {
 }
 
 function displayNotes() {
-    for (i=0; i < notes.length; i++) {
-        var noteContainer = document.createElement("article");
+
+        let i = notes.length - 1;
+
+        let noteContainer = document.createElement("article");
         noteContainer.setAttribute("class", "note");
         noteContainer.setAttribute("id", i)
         document.getElementById('notes').appendChild(noteContainer);
 
-        var titleTag = document.createElement("h2");
-        var titleContent = document.createTextNode(notes[i].title);
-        var titleNote = titleTag.appendChild(titleContent);
+        let titleTag = document.createElement("h2");
+        let titleContent = document.createTextNode(notes[i].title);
+        let titleNote = titleTag.appendChild(titleContent);
         
-        var descriptionTag = document.createElement("p");
-        var descriptionContent = document.createTextNode(notes[i].description);
-        var descriptionNote = descriptionTag.appendChild(descriptionContent);
+        let descriptionTag = document.createElement("p");
+        let descriptionContent = document.createTextNode(notes[i].description);
+        let descriptionNote = descriptionTag.appendChild(descriptionContent);
 
+        let buttonTag = document.createElement("button");
+        buttonTag.setAttribute("class", "removeNote");
+        buttonTag.setAttribute("id", "button-" + i);
+        buttonTag.setAttribute("onclick", "removeNote(this.id)");
+        
+    
         document.getElementById(i).appendChild(titleTag);
         document.getElementById(i).appendChild(descriptionTag);
+        document.getElementById(i).appendChild(buttonTag);
+}
+
+function removeNote(id) {
+    let parentId = document.getElementById(id).parentElement.id;
+    
+    document.getElementById(parentId).remove();
+
+    notes.splice(parentId, 1);
+    updateNoteId();
+}
+
+function updateNoteId() {
+    let test = document.getElementsByClassName("note");
+    for(i=0; i < test.length; i++) {
+        test[i].id = i;
     }
 
 }
-
-
-
 
 
 </script>
