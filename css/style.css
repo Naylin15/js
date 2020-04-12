@@ -23,4 +23,26 @@ body {
     border: 1px solid #333;
     height: 15px;
     width: 20px;
+    background-color: #333;
+}
+
+.editButton {
+    border: 1px solid #177414;
+    height: 15px;
+    width: 20px;
+    background-color: #177414;
+}
+
+.saveChanges {
+    border: 1px solid #4911e0;
+    height: 20px;
+    width: 25px;
+    background-color: #4911e0;
+}
+
+.removeNote2 {
+    border: 1px solid #af167c;
+    background-color: #af167c;
+    height: 20px;
+    width: 25px;
 }
