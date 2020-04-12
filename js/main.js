@@ -74,7 +74,7 @@ function editNote(parentId) {
     descriptionEdit.setAttribute("value", notes[parentId].description); 
 
     let saveButton = document.createElement("button");
-    saveButton.setAttribute("class", "saveChanges");
+    saveButton.setAttribute("class", "saveChanges icon-save");
     saveButton.setAttribute("id", "saveButton-" + parentId);
     saveButton.setAttribute("onclick", "saveNote(this.id)");
 

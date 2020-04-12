@@ -1,14 +1,16 @@
 body {
-    background-color: #fcfd99;
+    background-color: #e7eef8;
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
 }
 
 @font-face {
     font-family: 'icomoon';
-    src:  url('../fonts/icomoon.eot?ntmyqm');
-    src:  url('../fonts/icomoon.eot?ntmyqm#iefix') format('embedded-opentype'),
-      url('../fonts/icomoon.ttf?ntmyqm') format('truetype'),
-      url('../fonts/icomoon.woff?ntmyqm') format('woff'),
-      url('../fonts/icomoon.svg?ntmyqm#icomoon') format('svg');
+    src:  url('../fonts/icomoon.eot?80k3hy');
+    src:  url('../fonts/icomoon.eot?80k3hy#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?80k3hy') format('truetype'),
+      url('../fonts/icomoon.woff?80k3hy') format('woff'),
+      url('../fonts/icomoon.svg?80k3hy#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -32,17 +34,56 @@ body {
   .icon-edit:before {
     content: "\e906";
   }
+  .icon-save:before {
+    content: "\e962";
+  }
   .icon-bin:before {
     content: "\e9ac";
   }
+  
+  .icon-add:before {
+    content: "\ea0a";
+  }
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #A4224D;
+    height: 50px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+  
+.header a {
+    text-decoration: none;
+    color: #fff;
+    padding-right: 10px;
+}
+
+.header div {
+    padding-left: 10px;
+}
 
 .add-note {
     display: flex;
     justify-content: center;
+    margin-bottom: 40px;
+}
+    
+.notes {
+    max-width: 80%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
 }
 
 input {
     border-radius: 5px;
+    height: 20px;
+    padding-left: 5px;
+    margin-left: 10px;
 }
 
 .note {
@@ -63,42 +104,50 @@ input {
 }
 
 .removeNote {
-    border: 1px solid #333;
-    height: 15px;
-    width: 20px;
-    background-color: #333;
+    border: 1px solid #a7a7a7;
+    width: 45px;
+    border-radius: 5px;
+    height: 30px;
+    font-size: 15px;
+    background-color: rgba(255,255,255, 0.8);
+    color: #d81010;
+    margin-right: 20px;
+}
+
+.removeNote:hover {
+    border: 1px solid #fff;
+    background-color: #a7a7a7;
+    transition: 0.2s;
 }
 
 .editButton {
-    border: 1px solid #177414;
-    height: 15px;
-    width: 20px;
-    background-color: #177414;
+    border: 1px solid #a7a7a7;
+    width: 45px;
+    border-radius: 5px;
+    height: 30px;
+    font-size: 15px;
+    background-color: rgba(255,255,255, 0.8);
 }
 
-.icon-pencil2:before {
-    content: "\e906";
-  }
-
-.titleEdit {
-    width: 35%;
-}
-
-.descriptionEdit {
-    width: 35%;
-    margin-left: auto;
+.editButton:hover {
+    border: 1px solid #fff;
+    background-color: #a7a7a7;
+    color: #fff;
+    transition: 0.2s;
 }
 
 .saveChanges {
-    border: 1px solid #4911e0;
-    height: 20px;
-    width: 25px;
-    background-color: #4911e0;
+    border: 1px solid #a7a7a7;
+    width: 45px;
+    border-radius: 5px;
+    height: 30px;
+    font-size: 15px;
+    background-color: rgba(255,255,255, 0.8);
+    color: #611E77;
 }
 
-.removeNote2 {
-    border: 1px solid #af167c;
-    background-color: #af167c;
-    height: 20px;
-    width: 25px;
+.saveChanges:hover {
+    border: 1px solid #fff;
+    background-color: #a7a7a7;
+    transition: 0.2s;
 }
