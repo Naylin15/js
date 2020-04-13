@@ -30,11 +30,11 @@ function displayNotes() {
     let descriptionNote = descriptionTag.appendChild(descriptionContent);
 
     let removeButton = document.createElement("button");
-    removeButton.setAttribute("class", "removeNote icon-bin");
+    removeButton.setAttribute("class", "removeNote icon-bin button");
     removeButton.setAttribute("onclick", "removeNote(this.parentElement.id)");
         
     let editButton = document.createElement("button");
-    editButton.setAttribute("class", "editButton icon-edit");
+    editButton.setAttribute("class", "editButton icon-edit button");
     editButton.setAttribute("onclick", "editNote(this.parentElement.id)");
     
     document.getElementById(i).appendChild(titleTag);
@@ -74,7 +74,7 @@ function editNote(parentId) {
     descriptionEdit.setAttribute("value", notes[parentId].description); 
 
     let saveButton = document.createElement("button");
-    saveButton.setAttribute("class", "saveChanges icon-save");
+    saveButton.setAttribute("class", "saveChanges icon-save button");
     saveButton.setAttribute("id", "saveButton-" + parentId);
     saveButton.setAttribute("onclick", "saveNote(this.id)");
 

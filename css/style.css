@@ -103,51 +103,28 @@ input {
     width: 30%;
 }
 
-.removeNote {
+.button {
     border: 1px solid #a7a7a7;
     width: 45px;
     border-radius: 5px;
     height: 30px;
     font-size: 15px;
     background-color: rgba(255,255,255, 0.8);
+
+}
+
+.button:hover {
+    border: 1px solid #fff;
+    background-color: #a7a7a7;
+    transition: 0.2s;
+}
+
+.removeNote {
     color: #d81010;
     margin-right: 20px;
 }
 
-.removeNote:hover {
-    border: 1px solid #fff;
-    background-color: #a7a7a7;
-    transition: 0.2s;
-}
-
-.editButton {
-    border: 1px solid #a7a7a7;
-    width: 45px;
-    border-radius: 5px;
-    height: 30px;
-    font-size: 15px;
-    background-color: rgba(255,255,255, 0.8);
-}
-
-.editButton:hover {
-    border: 1px solid #fff;
-    background-color: #a7a7a7;
-    color: #fff;
-    transition: 0.2s;
-}
-
 .saveChanges {
-    border: 1px solid #a7a7a7;
-    width: 45px;
-    border-radius: 5px;
-    height: 30px;
-    font-size: 15px;
-    background-color: rgba(255,255,255, 0.8);
     color: #611E77;
 }
 
-.saveChanges:hover {
-    border: 1px solid #fff;
-    background-color: #a7a7a7;
-    transition: 0.2s;
-}
