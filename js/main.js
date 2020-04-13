@@ -1,5 +1,10 @@
 let notes = [];
-function addNote() {    
+
+const form = document.getElementById('form-add');
+form.addEventListener('submit', addNote);
+
+function addNote(e) {  
+    e.preventDefault()  
     let noteTitle = document.getElementById('noteTitle').value;
     let noteDescription = document.getElementById('noteDescription').value;
 
@@ -23,11 +28,11 @@ function displayNotes() {
 
     let titleTag = document.createElement("h2");
     let titleContent = document.createTextNode(notes[i].title);
-    let titleNote = titleTag.appendChild(titleContent);
+    titleTag.appendChild(titleContent);
         
     let descriptionTag = document.createElement("p");
     let descriptionContent = document.createTextNode(notes[i].description);
-    let descriptionNote = descriptionTag.appendChild(descriptionContent);
+    descriptionTag.appendChild(descriptionContent);
 
     let removeButton = document.createElement("button");
     removeButton.setAttribute("class", "removeNote icon-bin");
