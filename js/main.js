@@ -39,28 +39,30 @@ function displayNotes() {
     for (i=0; i < notes.length; i++){
 
         let noteArticle = document.createElement("article");
-        noteArticle.setAttribute("class", "note");
+        noteArticle.setAttribute("class", "note grid-x");
         noteArticle.setAttribute("id", i)
         document.getElementById('noteContainer').appendChild(noteArticle);
-    
-
+        
         let checkbox = document.createElement("input");
         checkbox.setAttribute("type", "checkbox");
-
+        checkbox.setAttribute("class", " checkbox small-2")
+        
         let titleTag = document.createElement("h2");
         let titleContent = document.createTextNode(notes[i].title);
+        titleTag.setAttribute("class", "small-4 cell");
         titleTag.appendChild(titleContent);
-            
+        
         let descriptionTag = document.createElement("p");
         let descriptionContent = document.createTextNode(notes[i].description);
+        descriptionTag.setAttribute("class", "small-4 cell");
         descriptionTag.appendChild(descriptionContent);
     
         let removeButton = document.createElement("button");
-        removeButton.setAttribute("class", "removeNote icon-bin");
+        removeButton.setAttribute("class", "removeNote icon-bin alert button");
         removeButton.setAttribute("onclick", "removeNote(this.parentElement.id)");
             
         let editButton = document.createElement("button");
-        editButton.setAttribute("class", "editButton icon-edit");
+        editButton.setAttribute("class", "editButton icon-edit button");
         editButton.setAttribute("onclick", "editNote(this.parentElement.id)");
 
         document.getElementById(i).appendChild(checkbox);
@@ -97,7 +99,7 @@ function editNote(parentId) {
     siblings[2].contentEditable = true;
 
     let saveButton = document.createElement("button");
-    saveButton.setAttribute("class", "saveChanges icon-save");
+    saveButton.setAttribute("class", "saveChanges icon-save success button");
     saveButton.setAttribute("id", "saveButton-" + parentId);
     saveButton.setAttribute("onclick", "saveNote(this.id)");
   
@@ -112,8 +114,8 @@ function saveNote(id) {
     notes[i].title = siblings[1].innerHTML;
     notes[i].description = siblings[2].innerHTML;
 
-    siblings[1].contentEditable = false;
-    siblings[2].contentEditable = false;
+    siblings[1].removeAttribute("contentEditable");
+    siblings[2].removeAttribute("contentEditable");
     document.getElementById("saveButton-" + i).remove();
 
 }
