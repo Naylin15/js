@@ -65,89 +65,19 @@ body {
     padding-left: 10px;
 }
 
-.add-note {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-}
-    
-.notes {
-    max-width: 80%;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    flex-wrap: wrap;
-}
-
-input {
-    border-radius: 5px;
-    height: 20px;
-    padding-left: 5px;
-    margin-left: 10px;
+.checkbox {
+    align-self: center;
 }
 
 .note {
-    display: flex;
-    border-bottom: 1px solid #333;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.note h2 {
-    width: 30%;
+    margin-top: 20px;
 }
 
 .note p {
-    width: 30%;
+    padding-top: 15px;
 }
 
-.removeNote {
-    border: 1px solid #a7a7a7;
-    width: 45px;
-    border-radius: 5px;
-    height: 30px;
-    font-size: 15px;
-    background-color: rgba(255,255,255, 0.8);
-    color: #d81010;
-    margin-right: 20px;
-}
-
-.removeNote:hover {
-    border: 1px solid #fff;
-    background-color: #a7a7a7;
-    transition: 0.2s;
-}
-
-.editButton {
-    border: 1px solid #a7a7a7;
-    width: 45px;
-    border-radius: 5px;
-    height: 30px;
-    font-size: 15px;
-    background-color: rgba(255,255,255, 0.8);
-}
-
-.editButton:hover {
-    border: 1px solid #fff;
-    background-color: #a7a7a7;
-    color: #fff;
-    transition: 0.2s;
-}
-
-.saveChanges {
-    border: 1px solid #a7a7a7;
-    width: 45px;
-    border-radius: 5px;
-    height: 30px;
-    font-size: 15px;
-    background-color: rgba(255,255,255, 0.8);
-    color: #611E77;
-}
-
-.saveChanges:hover {
-    border: 1px solid #fff;
-    background-color: #a7a7a7;
-    transition: 0.2s;
+[contenteditable] {
+    border: 1px solid #333;
+    margin: 10px;
 }
