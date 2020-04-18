@@ -65,6 +65,11 @@ body {
     padding-left: 10px;
 }
 
+.add-note button {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
 .checkbox {
     align-self: center;
 }
@@ -73,11 +78,35 @@ body {
     margin-top: 20px;
 }
 
-.note p {
-    padding-top: 15px;
+/* .note p {
+    padding-top: 1.5em;
+    border: 1px solid black;
 }
+
+.note h2 {
+  border: 1px solid rgb(31, 4, 105);
+} */
 
 [contenteditable] {
     border: 1px solid #333;
     margin: 10px;
+}
+
+
+@media screen and (min-width: 320px) {
+    .add-note button {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .note p {
+      padding-top: 0.2em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+    .note p {
+      padding-top: 1.5em;
+  }
 }

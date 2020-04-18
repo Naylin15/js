@@ -19,7 +19,6 @@ function addNote(e) {
 
 function checkNote() {
     let check = document.getElementById('noteContainer');
-
     
     if (check) {
         check.remove();
@@ -32,14 +31,14 @@ function checkNote() {
 function displayNotes() {
 
     let noteContainer = document.createElement("div");
-    noteContainer.setAttribute("class", "noteContainer");
+    noteContainer.setAttribute("class", "noteContainer grid-container");
     noteContainer.setAttribute("id", "noteContainer")
     document.getElementById('notes').appendChild(noteContainer);
 
     for (i=0; i < notes.length; i++){
 
         let noteArticle = document.createElement("article");
-        noteArticle.setAttribute("class", "note grid-x");
+        noteArticle.setAttribute("class", "note grid-x grid-margin-x");
         noteArticle.setAttribute("id", i)
         document.getElementById('noteContainer').appendChild(noteArticle);
         
@@ -49,12 +48,12 @@ function displayNotes() {
         
         let titleTag = document.createElement("h2");
         let titleContent = document.createTextNode(notes[i].title);
-        titleTag.setAttribute("class", "small-4 cell");
+        titleTag.setAttribute("class", "small-2 medium-4 cell");
         titleTag.appendChild(titleContent);
         
         let descriptionTag = document.createElement("p");
         let descriptionContent = document.createTextNode(notes[i].description);
-        descriptionTag.setAttribute("class", "small-4 cell");
+        descriptionTag.setAttribute("class", "small-2 medium-4 cell");
         descriptionTag.appendChild(descriptionContent);
     
         let removeButton = document.createElement("button");
