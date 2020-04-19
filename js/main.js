@@ -79,30 +79,29 @@ function removeNote(parentId) {
     document.getElementById(parentId).remove();
 
     notes.splice(parentId, 1);
-    updateNoteId();
-}
-
-function updateNoteId() {
-    let notesId = document.getElementsByClassName("note");
-    for(i=0; i < notesId.length; i++) {
-        notesId[i].id = i;
-    }
+    checkNote();
 }
 
 function editNote(parentId) {
 
-    let siblings = document.getElementById(parentId).childNodes;
-    console.log(siblings);
+    let saveButton = document.getElementById("saveButton-" + parentId);
+console.log(saveButton);
+    if(saveButton == null) {
+        let siblings = document.getElementById(parentId).childNodes;
+        siblings[1].contentEditable = true;
+        siblings[2].contentEditable = true;
+    
+        let saveButton = document.createElement("button");
+        saveButton.setAttribute("class", "saveChanges icon-save success button");
+        saveButton.setAttribute("id", "saveButton-" + parentId);
+        saveButton.setAttribute("onclick", "saveNote(this.id)");
+      
+        document.getElementById(parentId).appendChild(saveButton);    
+    } else {
+        alert("The note is already being edited");
+    
+    }
 
-    siblings[1].contentEditable = true;
-    siblings[2].contentEditable = true;
-
-    let saveButton = document.createElement("button");
-    saveButton.setAttribute("class", "saveChanges icon-save success button");
-    saveButton.setAttribute("id", "saveButton-" + parentId);
-    saveButton.setAttribute("onclick", "saveNote(this.id)");
-  
-    document.getElementById(parentId).appendChild(saveButton);    
 }
 
 function saveNote(id) {
