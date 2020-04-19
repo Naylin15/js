@@ -85,7 +85,7 @@ function removeNote(parentId) {
 function editNote(parentId) {
 
     let saveButton = document.getElementById("saveButton-" + parentId);
-console.log(saveButton);
+
     if(saveButton == null) {
         let siblings = document.getElementById(parentId).childNodes;
         siblings[1].contentEditable = true;
@@ -98,10 +98,35 @@ console.log(saveButton);
       
         document.getElementById(parentId).appendChild(saveButton);    
     } else {
-        alert("The note is already being edited");
+        warningMessage(parentId);
     
     }
 
+}
+
+function warningMessage(parentId) {
+
+    let warning = document.createElement("div");
+    warning.setAttribute("class", "alertMessage callout warning small-12");
+    warning.setAttribute("data-closable", "")
+
+    let header = document.createElement("h5");
+    header.innerHTML = "Warning";
+
+    let paragraph = document.createElement("p");
+    paragraph.innerHTML = "The note is alredy being edited";
+    
+    let closeButton = document.createElement("button");
+    closeButton.setAttribute("class", "close-button");
+    closeButton.setAttribute("type", "button");
+    closeButton.setAttribute("data-close", "");
+    closeButton.innerHTML = "x";
+
+    document.getElementById(parentId).appendChild(warning);
+    warning.appendChild(header);
+    warning.appendChild(paragraph);
+    warning.appendChild(closeButton);
+    
 }
 
 function saveNote(id) {
