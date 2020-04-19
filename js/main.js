@@ -126,6 +126,11 @@ function warningMessage(parentId) {
     warning.appendChild(header);
     warning.appendChild(paragraph);
     warning.appendChild(closeButton);
+
+    setTimeout(function() {
+        $(".alertMessage").fadeOut("3000", warning.remove());
+    }, 3000
+    );
     
 }
 

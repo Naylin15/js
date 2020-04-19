@@ -90,7 +90,7 @@ body {
 }
 
 .alertMessage {
-  margin-left: 10px;
+  margin-left: 10px !important;
 }
 
 @media screen and (min-width: 320px) {
