@@ -78,18 +78,15 @@ body {
     margin-top: 20px;
 }
 
-/* .note p {
-    padding-top: 1.5em;
-    border: 1px solid black;
+.removeNote, .editButton, 
+.saveChanges {
+  margin-right: 0.3em;
 }
 
-.note h2 {
-  border: 1px solid rgb(31, 4, 105);
-} */
-
 [contenteditable] {
-    border: 1px solid #333;
-    margin: 10px;
+    border: 1px solid rgb(202 202 202);
+    padding: 0 5px;
+    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
 }
 
 
