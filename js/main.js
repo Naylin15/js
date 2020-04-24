@@ -28,7 +28,7 @@ function checkNote() {
 
 function displayNotes() {
     let noteContainer = document.createElement("div");
-    noteContainer.setAttribute("class", "noteContainer grid-container");
+    noteContainer.setAttribute("class", "noteContainer ui container");
     noteContainer.setAttribute("id", "noteContainer")
     document.getElementById('notes').appendChild(noteContainer);
 
@@ -39,7 +39,7 @@ function displayNotes() {
             attributes: [
                 {
                     type: "class",
-                    value: "note grid-x grid-margin-x"
+                    value: "ui equal width centered center aligned grid"
                 },
                 {
                     type: "id",
@@ -50,59 +50,103 @@ function displayNotes() {
         document.getElementById('noteContainer').appendChild(noteArticle);
         
         let checkbox = createHTML({
-            type: "input",
+            type: "div",
             attributes: [
                 {
-                    type: "type",
-                    value: "checkbox"
-                },
-                {
                     type: "class",
-                    value: "checkbox small-2"
-                }
-            ]
+                    value: "column"
+                }],
+            innerTag: {
+                type: "input",
+                attributes: [
+                    {
+                        type: "type",
+                        value: "checkbox"
+                    },
+                    {
+                        type: "class",
+                        value: "checkbox"
+                    }
+                ]
+            }
         });
         document.getElementById(i).appendChild(checkbox);
-        
+
         let titleTag = createHTML({
-            type: "h2",
+            type: "div",
             attributes: [
                 {
                     type: "class",
-                    value: "small-2 medium-4 cell"
-                }
-            ],
-            description: notes[i].title
+                    value: "column"
+                }],
+            innerTag: {
+                type: "h2",
+                description: notes[i].title
+            },
         });
         document.getElementById(i).appendChild(titleTag);
         
         let removeButton = createHTML({
-            type: "button",
+            type: "div",
             attributes: [
                 {
                     type: "class",
-                    value: "removeNote icon-bin alert button"
-                },
-                {
-                    type: "onclick",
-                    value: "removeNote(this.parentElement.id)"
+                    value: "column"
+                }],
+            innerTag: {
+                type: "button",
+                attributes: [
+                    {
+                        type: "class",
+                        value: "ui negative icon button"
+                    },
+                    {
+                        type: "onclick",
+                        value: "removeNote(this.parentElement)"
+                    }
+                ],
+                innerTag: {
+                    type: "i",
+                    attributes: [
+                        {
+                            type: "class",
+                            value: "trash alternate icon"
+                        }
+                    ]
                 }
-            ]
+            }
         });
         document.getElementById(i).appendChild(removeButton);
         
         let editButton = createHTML({
-            type: "button",
+            type: "div",
             attributes: [
                 {
                     type: "class",
-                    value: "editButton icon-edit button"
-                },
-                {
-                    type: "onclick",
-                    value: "editNote(this.parentElement.id)"
+                    value: "column"
+                }],
+            innerTag: {
+                type: "button",
+                attributes: [
+                    {
+                        type: "class",
+                        value: "ui secondary icon button"
+                    },
+                    {
+                        type: "onclick",
+                        value: "editNote(this.parentElement)"
+                    }
+                ],
+                innerTag: {
+                    type: "i",
+                    attributes: [
+                        {
+                            type: "class",
+                            value: "edit outline icon"
+                        }
+                    ]
                 }
-            ]
+            }
         });
         document.getElementById(i).appendChild(editButton);
     }
@@ -117,34 +161,59 @@ function createHTML(content) {
             
         });
     }
+    if (content.innerTag){
+        let insideTag = createHTML(content.innerTag);
+        newElement.appendChild(insideTag);
+    }
     if (content.description) {
         let descriptionContent = document.createTextNode(content.description);
         newElement.appendChild(descriptionContent);
-
     }
     return newElement;
 }
 
-function removeNote(parentId) {
+function removeNote(parent) {
+    let parentId = parent.parentElement.id;
     document.getElementById(parentId).remove();
 
     notes.splice(parentId, 1);
     checkNote();
 }
 
-function editNote(parentId) {
+function editNote(parent) {
+    let parentId = parent.parentElement.id;
     let saveButton = document.getElementById("saveButton-" + parentId);
 
     if(saveButton == null) {
         let siblings = document.getElementById(parentId).childNodes;
-        siblings[1].contentEditable = true;
+
+        let editInput = createHTML({
+            type: "input",
+            attributes: [
+                {
+                    type: "id",
+                    value: "editInput-" + parentId
+                },
+                {
+                    type: "value",
+                    value: notes[parentId].title
+                }
+            ]
+        });
+        // function insertAfter(newNode, referenceNode) {
+            test = siblings[0].nextSibling;
+            console.log("test " + test)
+            test.parentNode.insertBefore(editInput, siblings[1].nextSibling);
+        // }
+        document.getElementById(parentId).appendChild(editInput);
+        siblings[1].remove();
     
         let saveButton = createHTML({
             type: "button",
             attributes: [
                 {
                     type: "class",
-                    value: "saveChanges icon-save success button"
+                    value: "ui positive icon button"
                 },
                 {
                     type: "id",
@@ -154,7 +223,16 @@ function editNote(parentId) {
                     type: "onclick",
                     value: "saveNote(this.id)"
                 }
-            ]
+            ],
+            innerTag: {
+                type: "i",
+                attributes: [
+                    {
+                        type: "class",
+                        value: "save outline icon"
+                    }
+                ]
+            }
         });
         document.getElementById(parentId).appendChild(saveButton);    
       
@@ -218,10 +296,11 @@ function warningMessage(parentId) {
 function saveNote(id) {
     let i = document.getElementById(id).parentElement.id;
     
-    let siblings = document.getElementById(i).childNodes;
- 
-    notes[i].title = siblings[1].innerHTML;
+    let newTitle = document.getElementById("editInput-" + i);
+    notes[i].title = newTitle.value;
 
-    siblings[1].removeAttribute("contentEditable");
     document.getElementById("saveButton-" + i).remove();
+    document.getElementById("editInput-" + i).remove();
+    checkNote();
+
 }
