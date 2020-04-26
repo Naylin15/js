@@ -1,19 +1,21 @@
+// const addNote = require("./addNote.js")
+console.log(addNote);
 let notes = [];
 
 const form = document.getElementById('form-add');
 form.addEventListener('submit', addNote);
 
-function addNote(e) {  
-    e.preventDefault()  
-    let noteTitle = document.getElementById('noteTitle').value;
+// function addNote(e) {  
+//     e.preventDefault()  
+//     let noteTitle = document.getElementById('noteTitle').value;
 
-    notes.push({
-        title: noteTitle,
-    })
-    document.getElementById('form-add').reset();
-    checkNote();
+//     notes.push({
+//         title: noteTitle,
+//     })
+//     document.getElementById('form-add').reset();
+//     checkNote();
 
-}
+// }
 
 function checkNote() {
     let check = document.getElementById('noteContainer');

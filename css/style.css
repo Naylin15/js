@@ -31,3 +31,8 @@ body {
 .add-note {
     margin-bottom: 3em;
 }
+
+.checked {
+    color: grey;
+    text-decoration: line-through;
+}
