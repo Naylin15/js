@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="semantic/out/semantic.min.css">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <title>Notes</title>
 </head>
 <body>
-    <header class="header">
+    <header class="main-header">
         <div>
             PersonalChallenge
         </div>
@@ -19,21 +19,30 @@
     </header>
     <section class="add-note">
             <form id="form-add">
-                <div class="grid-container">
-                    <div class="grid-x grid-margin-x">
-                        <div class="small-12 medium-6 cell">
-                            <label for="noteTitle">Title</label>
-                            <input type="text" name="noteTitle" id="noteTitle" required>
+                    <div class="ui stackable three column centered grid container">
+                        <div class="ui center aligned column">
+                            <h2>Title</h2>
                         </div>
-                        <button type="submit" class="small-12 medium-2 button">Add</button>
+                        <div class="ui center aligned column">
+                            <div class="ui fluid input">
+                                <input type="text" name="noteTitle" id="noteTitle" required>
+                            </div>
+                        </div>
+                        <div class="ui center aligned column">
+                            <button type="submit" class="ui primary button center aligned">Add</button>
+                        </div>
                     </div>
-                </div>
             </form>
     </section>
-    <section class="notes" id="notes">
+    <section class="ui container" id="notes">
     </section>
 </body>
-<script src="js/app.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="semantic/out/semantic.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/displayNotes.js"></script>
 
 </html>
