@@ -1,5 +1,4 @@
 // const addNote = require("./addNote.js")
-console.log(addNote);
 let notes = [];
 
 const form = document.getElementById('form-add');
