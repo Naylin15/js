@@ -1,8 +1,13 @@
 // const addNote = require("./addNote.js")
-let notes = [];
 
-const form = document.getElementById('form-add');
-form.addEventListener('submit', addNote);
+// // index.js
+
+// let notes = [];
+
+// const form = document.getElementById('form-add');
+// form.addEventListener('submit', addNote);
+
+// // addNote.js
 
 // function addNote(e) {  
 //     e.preventDefault()  
@@ -16,16 +21,21 @@ form.addEventListener('submit', addNote);
 
 // }
 
-function checkNote() {
-    let check = document.getElementById('noteContainer');
+// // checkNote.js
+
+// function checkNote() {
+//     let check = document.getElementById('noteContainer');
     
-    if (check) {
-        check.remove();
-        displayNotes();
-    } else {
-        displayNotes();
-    }
-}
+//     if (check) {
+//         check.remove();
+//         displayNotes();
+//     } else {
+//         displayNotes();
+//     }
+// }
+
+// // removeNote.js
+
 
 function removeNote(parent) {
     let parentId = parent.parentElement.parentElement.parentElement.id;

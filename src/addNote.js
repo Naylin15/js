@@ -1,4 +1,5 @@
 import { notes } from './index.js';
+import { checkNote } from './checkNote.js';
 
 export var addNote = function(e) {  
     console.log("Hi from addNote " + notes)
