@@ -1,5 +1,5 @@
-import { addNote } from './addNote.js';
-//import { removeNote } from './removeNote.js';
+import { addNote } from './addNote';
+// import { removeNote } from './removeNote';
 
 export var notes = [];
 const form = document.getElementById('form-add');

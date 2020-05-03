@@ -1,10 +1,17 @@
-function displayNotes() {
+import { notes } from './index';
+import { removeNote } from './removeNote';
+
+// question for gianfranco, when using webpack i was not defined
+console.log("Hi from display notes");
+
+var removeNoteEvent;
+
+export var displayNotes = function() {
     let noteContainer = document.createElement("div");
     noteContainer.setAttribute("class", "note-container ui container");
     noteContainer.setAttribute("id", "noteContainer")
     document.getElementById('notes').appendChild(noteContainer);
-
-    for (i=0; i < notes.length; i++){
+    for (let i=0; i < notes.length; i++){
         
         let noteArticle = createHTML({
             type: "article",
@@ -94,9 +101,14 @@ function displayNotes() {
                                 value: "ui negative icon button"
                             },
                             {
-                                type: "onclick",
-                                value: "removeNote(this.parentElement)"
+                                type: "id",
+                                value: "removeButton-" + i
                             }
+                            // ,
+                            // {
+                            //     type: "onclick",
+                            //     value: "removeNote(this.parentElement)"
+                            // }
                         ],
                         innerTag: {
                             type: "i",
@@ -121,6 +133,10 @@ function displayNotes() {
                                 value: "ui secondary icon button"
                             },
                             {
+                                type: "id",
+                                value: "editButton-" + i
+                            },
+                            {
                                 type: "onclick",
                                 value: "editNote(this.parentElement)"
                             }
@@ -137,11 +153,13 @@ function displayNotes() {
             }
         });
         document.getElementById(i).appendChild(secondColumn);
-
+        removeNoteEvent = document.getElementById('removeNote-' + i);
+        console.log(remoteNoteEvent);
+        removeNoteEvent.addEventListener('onclick', function(){console.log("Hi on click")});
     }
 }
 
-function createHTML(content) {
+export var createHTML = function(content) {
     let newElement = document.createElement(content.type);
     if (content.attributes) {
         content.attributes.forEach(attribute => {

@@ -1,8 +1,8 @@
-import { notes } from './index.js';
-import { checkNote } from './checkNote.js';
+import { notes } from './index';
+import { checkNote } from './checkNote';
 
 export var addNote = function(e) {  
-    console.log("Hi from addNote " + notes)
+    console.log("Hi from addNote ")
     e.preventDefault();
     let noteTitle = document.getElementById('noteTitle').value;
 

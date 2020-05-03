@@ -1,4 +1,4 @@
-import { displayNotes } from './displayNotes.js';
+import { displayNotes } from './displayNotes';
 
 export var checkNote = function() {
     let check = document.getElementById('noteContainer');
