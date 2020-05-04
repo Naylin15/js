@@ -1,7 +1,7 @@
 import { notes } from './index';
 import { checkNote } from './checkNote';
 
-export var saveNote = function(parent) {
+export function saveNote(parent) {
     let i = parent.parentElement.parentElement.parentElement.id;
     let newTitle = document.getElementById("editInput-" + i);
     notes[i].title = newTitle.value;
