@@ -9,5 +9,4 @@ export function saveNote(parent) {
     document.getElementById("saveButton-" + i).remove();
     document.getElementById("editInput-" + i).remove();
     checkNote();
-
 }

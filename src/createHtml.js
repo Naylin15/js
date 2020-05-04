@@ -3,7 +3,6 @@ export function createHTML(content) {
     if (content.attributes) {
         content.attributes.forEach(attribute => {
             newElement.setAttribute(attribute.type, attribute.value);
-            
         });
     }
     if (content.innerTag){
