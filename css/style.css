@@ -32,7 +32,11 @@ body {
     margin-bottom: 3em;
 }
 
-.checked {
+.finished {
     color: grey;
     text-decoration: line-through;
+}
+
+.hide {
+    display: none;
 }

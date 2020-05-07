@@ -1,7 +1,8 @@
 import { notes } from '../index';
 import { removeNote } from '../removeNote';
 import { editNote } from '../editNote/';
-import createNoteArticle from './createNoteArticle'
+import isFinished from './finishedStyle';
+import createNoteArticle from './createNoteArticle';
 import createFirstColumn from './createFirstColumn';
 import createSecondColumn from './createSecondColumn';
 import createNoteContainer from './createNoteContainer';
@@ -14,7 +15,7 @@ export function displayNotes() {
         let noteArticle = createNoteArticle(i);
         document.getElementById('noteContainer').appendChild(noteArticle);
         
-        let firstColumn = createFirstColumn(notes[i].title);
+        let firstColumn = createFirstColumn(i, notes[i].title);
         document.getElementById(i).appendChild(firstColumn);
         
         let secondColumn = createSecondColumn(i);
@@ -24,5 +25,9 @@ export function displayNotes() {
         removeNoteEvent.addEventListener('click', function(){removeNote(this.parentElement)});
         const editNoteEvent = document.getElementById('editButton-' + i);
         editNoteEvent.addEventListener('click', function(){editNote(this.parentElement)});
+        const noteIsFinished = document.getElementById('checkbox-' + i);
+        noteIsFinished.addEventListener( 'change', function() {
+            isFinished(noteIsFinished, editNoteEvent);
+        });
     }
 }

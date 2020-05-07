@@ -1,6 +1,6 @@
 import { createHTML } from '../createHtml';
 
-export default function createFirstColumn(title) {
+export default function createFirstColumn(parentId, title) {
     let firstColumn = createHTML({
         type: "div",
             attributes: [{
@@ -25,6 +25,10 @@ export default function createFirstColumn(title) {
                             {
                                 type: "type",
                                 value: "checkbox"
+                            },
+                            {
+                                type: "id",
+                                value: "checkbox-" + parentId
                             },
                             {
                                 type: "class",
