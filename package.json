@@ -3,7 +3,8 @@
   "jest": {
     "transformIgnorePatterns": [
       "<rootDir>/(node_modules)/"
-    ]
+    ],
+    "setupFiles": ["<rootDir>/test-env.js"]
   },
   "version": "1.0.0",
   "description": "ToDoList",
