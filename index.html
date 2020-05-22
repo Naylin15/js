@@ -19,19 +19,16 @@
     </header>
     <section class="add-note">
             <form id="form-add">
-                    <div class="ui stackable three column centered grid container">
-                        <div class="ui center aligned column">
-                            <h2>Title</h2>
-                        </div>
-                        <div class="ui center aligned column">
-                            <div class="ui fluid input">
-                                <input type="text" name="noteTitle" id="noteTitle" required>
-                            </div>
-                        </div>
-                        <div class="ui center aligned column">
-                            <button type="submit" class="ui primary button center aligned">Add</button>
+                <div class="ui stackable two column centered grid container">
+                    <div class="ui center aligned column">
+                        <div class="ui fluid input">
+                            <input type="text" name="noteTitle" id="noteTitle" placeholder="Add to-do" required>
                         </div>
                     </div>
+                    <div class="ui center aligned column">
+                        <button type="submit" class="ui primary button center aligned">Add</button>
+                    </div>
+                </div>
             </form>
     </section>
     <section class="ui container" id="notes">
