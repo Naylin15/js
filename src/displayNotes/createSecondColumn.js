@@ -1,4 +1,4 @@
-import { createHTML } from '../createHtml';
+import createHTML from '../createHtml';
 
 export default function createSecondColumn(parentId) {
     let newSecondColumn = createHTML ({
@@ -32,7 +32,7 @@ export default function createSecondColumn(parentId) {
                                 value: "tag icon"
                             }]
                         },
-                        siblings: {
+                        siblings: [{
                             type: "div",
                             attributes: [{
                                 type: "class",
@@ -57,12 +57,12 @@ export default function createSecondColumn(parentId) {
                                             value: "ui red empty circular label"
                                         }]
                                     },
-                                    siblings: {
+                                    siblings: [{
                                         type: "span",
                                         description: "Important"
-                                    }
+                                    }]
                                 },
-                                siblings: {
+                                siblings: [{
                                     type: "div",
                                     attributes: [{
                                         type: "class",
@@ -75,15 +75,33 @@ export default function createSecondColumn(parentId) {
                                             value: "ui blue empty circular label"
                                         }]
                                     },
-                                    siblings: {
+                                    siblings: [{
                                         type: "span",
                                         description: "Later"
-                                    }
-                                }
+                                    }]
+                                },
+                                {
+                                    type: "div",
+                                    attributes: [{
+                                        type: "class",
+                                        value: "item"
+                                    }],
+                                    innerTag: {
+                                        type: "div",
+                                        attributes: [{
+                                            type: "class",
+                                            value: "ui yellow empty circular label"
+                                        }]
+                                    },
+                                    siblings: [{
+                                        type: "span",
+                                        description: "Tomorrow"
+                                    }]
+                                }]
                             }
-                        }
+                        }]
                     },
-                    siblings: {
+                    siblings: [{
                         type: "div",
                         attributes: [{
                                 type: "class",
@@ -96,7 +114,7 @@ export default function createSecondColumn(parentId) {
                                 value: "ellipsis vertical icon"
                             }]
                         },
-                        siblings: {
+                        siblings: [{
                             type: "div",
                             attributes: [{
                                 type: "class",
@@ -120,7 +138,7 @@ export default function createSecondColumn(parentId) {
                                     }],
                                     description: "Delete"
                                 },
-                                siblings: {
+                                siblings: [{
                                     type: "div",
                                     attributes: [{
                                         type: "class",
@@ -131,10 +149,10 @@ export default function createSecondColumn(parentId) {
                                         value: "editNote-" + parentId
                                     }],
                                     description: "Edit"
-                                }
+                                }]
                             }
-                        }
-                    }
+                        }]
+                    }]
                 },
             }
     });

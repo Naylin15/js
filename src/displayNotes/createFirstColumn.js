@@ -37,7 +37,7 @@ export default function createFirstColumn(parentId, title) {
                         ]
                     }
                 },
-                siblings: {
+                siblings: [{
                     type: "div",
                     attributes: [{
                         type: "class",
@@ -47,7 +47,7 @@ export default function createFirstColumn(parentId, title) {
                         type: "h2",
                         description: title
                     }
-                }
+                }]
             }
     });
     return firstColumn;

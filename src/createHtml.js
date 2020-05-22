@@ -9,8 +9,10 @@ export default function createHTML(content) {
         let insideTag = createHTML(content.innerTag);
         newElement.appendChild(insideTag);
         if(content.siblings) {
-            let sibling = createHTML(content.siblings);
-            insideTag.insertAdjacentElement("afterend", sibling);
+            content.siblings.forEach(element => {
+                let sibling = createHTML(element);
+                insideTag.insertAdjacentElement("afterend", sibling);
+            });
         }
     }
     if (content.description) {
