@@ -1,9 +1,9 @@
-export default function isFinished(checkedNote, editButton){
+export default function isFinished(checkedNote, editNote){
     if (checkedNote.checked) {
         checkedNote.parentElement.parentElement.parentElement.className = "column finished";
-        editButton.className = "hide";
+        editNote.className = "hide";
     } else {
         checkedNote.parentElement.parentElement.parentElement.className = "column";
-        editButton.className = "ui secondary icon button";
+        editNote.className = "item";
     }
 }

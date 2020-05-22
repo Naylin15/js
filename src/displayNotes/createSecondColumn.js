@@ -1,4 +1,4 @@
-import { createHTML } from '../createHtml'
+import { createHTML } from '../createHtml';
 
 export default function createSecondColumn(parentId) {
     let newSecondColumn = createHTML ({
@@ -20,53 +20,122 @@ export default function createSecondColumn(parentId) {
                         value: "center aligned column"
                     }],
                     innerTag: {
-                        type: "button",
-                        attributes: [
-                            {
+                        type: "div",
+                        attributes: [{
                                 type: "class",
-                                value: "ui negative icon button"
-                            },
-                            {
-                                type: "id",
-                                value: "removeButton-" + parentId
-                            }
-                        ],
+                                value: "ui dropdown"
+                            }],
                         innerTag: {
                             type: "i",
                             attributes: [{
                                 type: "class",
-                                value: "trash alternate icon"
+                                value: "tag icon"
                             }]
+                        },
+                        siblings: {
+                            type: "div",
+                            attributes: [{
+                                type: "class",
+                                value: "menu"
+                            }],
+                            innerTag: {
+                                type: "div",
+                                attributes: [{
+                                    type: "class",
+                                    value: "scrolling menu"
+                                }],
+                                innerTag: {
+                                    type: "div",
+                                    attributes: [{
+                                        type: "class",
+                                        value: "item"
+                                    }],
+                                    innerTag: {
+                                        type: "div",
+                                        attributes: [{
+                                            type: "class",
+                                            value: "ui red empty circular label"
+                                        }]
+                                    },
+                                    siblings: {
+                                        type: "span",
+                                        description: "Important"
+                                    }
+                                },
+                                siblings: {
+                                    type: "div",
+                                    attributes: [{
+                                        type: "class",
+                                        value: "item"
+                                    }],
+                                    innerTag: {
+                                        type: "div",
+                                        attributes: [{
+                                            type: "class",
+                                            value: "ui blue empty circular label"
+                                        }]
+                                    },
+                                    siblings: {
+                                        type: "span",
+                                        description: "Later"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    siblings: {
+                        type: "div",
+                        attributes: [{
+                                type: "class",
+                                value: "ui dropdown"
+                            }],
+                        innerTag: {
+                            type: "i",
+                            attributes: [{
+                                type: "class",
+                                value: "ellipsis vertical icon"
+                            }]
+                        },
+                        siblings: {
+                            type: "div",
+                            attributes: [{
+                                type: "class",
+                                value: "menu"
+                            }],
+                            innerTag: {
+                                type: "div",
+                                attributes: [{
+                                    type: "class",
+                                    value: "scrolling menu"
+                                }],
+                                innerTag: {
+                                    type: "div",
+                                    attributes: [{
+                                        type: "class",
+                                        value: "item"
+                                    },
+                                    {
+                                        type: "id",
+                                        value: "removeNote-" + parentId
+                                    }],
+                                    description: "Delete"
+                                },
+                                siblings: {
+                                    type: "div",
+                                    attributes: [{
+                                        type: "class",
+                                        value: "item"
+                                    },
+                                    {
+                                        type: "id",
+                                        value: "editNote-" + parentId
+                                    }],
+                                    description: "Edit"
+                                }
+                            }
                         }
                     }
                 },
-                siblings: {
-                    type: "div",
-                    attributes: [{
-                        type: "class",
-                        value: "column"
-                    }],
-                    innerTag: {
-                        type: "button",
-                        attributes: [
-                            {
-                                type: "class",
-                                value: "ui secondary icon button"
-                            },
-                            {
-                                type: "id",
-                                value: "editButton-" + parentId
-                            }
-                        ],
-                        innerTag: {
-                            type: "i",
-                            attributes: [{
-                                type: "class",
-                                value: "edit outline icon"
-                            }]
-                        }
-                    }
-                }
             }
     });
     return newSecondColumn;

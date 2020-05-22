@@ -1,4 +1,4 @@
-export function createHTML(content) {
+export default function createHTML(content) {
     let newElement = document.createElement(content.type);
     if (content.attributes) {
         content.attributes.forEach(attribute => {

@@ -1,4 +1,4 @@
-import { createHTML } from '../createHtml'
+import createHTML from '../createHtml';
 
 export default function createNoteContainer() {
     let noteContainer = createHTML ({

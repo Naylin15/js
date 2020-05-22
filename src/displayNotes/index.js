@@ -20,11 +20,12 @@ export function displayNotes() {
         
         let secondColumn = createSecondColumn(i);
         document.getElementById(i).appendChild(secondColumn);
+        $('.ui.dropdown').dropdown();
 
-        const removeNoteEvent = document.getElementById('removeButton-' + i);
-        removeNoteEvent.addEventListener('click', function(){removeNote(this.parentElement)});
-        const editNoteEvent = document.getElementById('editButton-' + i);
-        editNoteEvent.addEventListener('click', function(){editNote(this.parentElement)});
+        const removeNoteEvent = document.getElementById('removeNote-' + i);
+        removeNoteEvent.addEventListener('click', function(){removeNote(i);});
+        const editNoteEvent = document.getElementById('editNote-' + i);
+        editNoteEvent.addEventListener('click', function(){editNote(i);});
         const noteIsFinished = document.getElementById('checkbox-' + i);
         noteIsFinished.addEventListener( 'change', function() {
             isFinished(noteIsFinished, editNoteEvent);
