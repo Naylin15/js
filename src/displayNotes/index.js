@@ -6,6 +6,7 @@ import createNoteArticle from './createNoteArticle';
 import createFirstColumn from './createFirstColumn';
 import createSecondColumn from './createSecondColumn';
 import createNoteContainer from './createNoteContainer';
+import addCategory from  '../noteCategory/addCategory';
 
 export function displayNotes() {
     let noteContainer = createNoteContainer();
@@ -30,5 +31,16 @@ export function displayNotes() {
         noteIsFinished.addEventListener( 'change', function() {
             isFinished(noteIsFinished, editNoteEvent);
         });
+        //add listenes for each note category then when onclick call the function with the selected value
+        const importantNote = document.getElementById('noteCategory-' + i);
+        importantNote.addEventListener('click', function(){
+            const noteC = $('#noteCategory-' + i).dropdown('get value');
+            if (noteC !== "") {
+                addCategory(i, noteC);
+                console.log(noteC);
+            }
+        });
+        // noteC = $('#noteCategory-' + i).dropdown('get value');
+        
     }
 }

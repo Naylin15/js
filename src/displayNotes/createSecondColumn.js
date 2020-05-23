@@ -24,7 +24,11 @@ export default function createSecondColumn(parentId) {
                         attributes: [{
                                 type: "class",
                                 value: "ui dropdown"
-                            }],
+                            },
+                            {
+                                type: "id",
+                                value: "noteCategory-" + parentId
+                        }],
                         innerTag: {
                             type: "i",
                             attributes: [{
@@ -49,13 +53,17 @@ export default function createSecondColumn(parentId) {
                                     attributes: [{
                                         type: "class",
                                         value: "item"
+                                    },
+                                    {
+                                        type: "data-value",
+                                        value: "important"
                                     }],
                                     innerTag: {
                                         type: "div",
                                         attributes: [{
                                             type: "class",
                                             value: "ui red empty circular label"
-                                        }]
+                                        }]  
                                     },
                                     siblings: [{
                                         type: "span",
@@ -67,6 +75,10 @@ export default function createSecondColumn(parentId) {
                                     attributes: [{
                                         type: "class",
                                         value: "item"
+                                    },
+                                    {
+                                        type: "data-value",
+                                        value: "later"
                                     }],
                                     innerTag: {
                                         type: "div",
@@ -85,6 +97,10 @@ export default function createSecondColumn(parentId) {
                                     attributes: [{
                                         type: "class",
                                         value: "item"
+                                    },
+                                    {
+                                        type: "data-value",
+                                        value: "tomorrow"
                                     }],
                                     innerTag: {
                                         type: "div",
