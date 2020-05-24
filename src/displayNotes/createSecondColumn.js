@@ -23,7 +23,7 @@ export default function createSecondColumn(parentId) {
                         type: "div",
                         attributes: [{
                                 type: "class",
-                                value: "ui dropdown"
+                                value: "ui dropdown labeled icon button"
                             },
                             {
                                 type: "id",
@@ -37,6 +37,14 @@ export default function createSecondColumn(parentId) {
                             }]
                         },
                         siblings: [{
+                            type: "span",
+                            attributes: [{
+                                type: "class",
+                                value: "text"
+                            }],
+                            description: "Category"
+                            },
+                            {
                             type: "div",
                             attributes: [{
                                 type: "class",
