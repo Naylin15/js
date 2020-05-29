@@ -1,22 +1,22 @@
 import { removeNote } from '../src/removeNote';
+import { notes } from '../src/index';
+
 
 test('remove note', () => {
+    jest.spyOn(notes, 'splice');
+
     document.body.innerHTML =
     '<div id="notes">' +
+    `<article class="article ui two column stackable grid" id="0">
+    <div class="item" id="removeNote-0">Delete</div>
+    </article>` +
     '</div>';
-    let notes = [];
-    notes.push({
-        title: 'abc'
-    },
-    {
-        title: 'def'
-    });
+    const removeNoteEvent = document.getElementById('removeNote-0');
+    removeNoteEvent.addEventListener('click', function(){removeNote(0);});
+    removeNoteEvent.click();
 
-    let removingNote = removeNote(0);
-    const divContainer = document.getElementById('notes');
-    divContainer.appendChild(removingNote);
-    let headerTag = document.getElementById(0).childNodes[0].childNodes[0].childNodes[1];
-    expect(headerTag.innerHTML).toBe(
-        '<h2>def</h2>'
-    );
+    let removedNote = document.getElementById('0');
+
+    expect(removedNote).toBe(null);
+    expect(notes.splice).toHaveBeenCalledWith(0, 1);
 });
