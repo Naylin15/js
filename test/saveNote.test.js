@@ -9,20 +9,7 @@ test('save note', () => {
 
     index.notes[0] = [{ title: 'abc' }];
 
-    document.body.innerHTML =
-    '<div id="notes">' +
-    `<article id="0">
-    <div>
-        <div>
-            <div>
-                <input type="text" id="editInput-0" value="abcd"/>
-                <button class="ui positive icon button" id="saveButton-0"> 
-                </button>
-            </div>
-        </div>
-    </div>
-    </article>` +
-    '</div>';
+    document.body.innerHTML ='<div id="notes"><article id="0"><div><div><div><input type="text" id="editInput-0" value="abcd"/><button class="ui positive icon button" id="saveButton-0"></button></div></div></div></article></div>';
 
     saveNote(document.getElementById('saveButton-0').parentElement);
     const editInput = document.getElementById('editInput-0');

@@ -17,9 +17,7 @@ test('create HTML element', () => {
         }
     });
 
-    document.body.innerHTML =
-    '<div  id="div">' +
-    '</div>';
+    document.body.innerHTML = '<div  id="div"></div>';
 
     document.getElementById('div').appendChild(testHtml);
 

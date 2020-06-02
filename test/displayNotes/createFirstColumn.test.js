@@ -1,15 +1,10 @@
 import createFirstColumn from '../../src/displayNotes/createFirstColumn';
 
 test('create first column', () => {
-    document.body.innerHTML =
-    '<div id="container">' +
-    '</div>';
-    let notes = [];
-    notes.push({
-        title: 'abc'
-    });
+    document.body.innerHTML = '<div id="container"></div>';
+    const title = 'abc';
 
-    let firstColumn = createFirstColumn(0, notes[0].title);
+    let firstColumn = createFirstColumn(0, title);
     const divContainer = document.getElementById('container');
     divContainer.appendChild(firstColumn);
 
