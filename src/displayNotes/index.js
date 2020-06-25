@@ -1,4 +1,3 @@
-import { notes } from '../index';
 import { removeNote } from '../removeNote';
 import { editNote } from '../editNote/';
 import isFinished from './finishedStyle';
@@ -8,15 +7,15 @@ import createSecondColumn from './createSecondColumn';
 import createNoteContainer from './createNoteContainer';
 import addCategory from  '../noteCategory/addCategory';
 
-export function displayNotes() {
+export function displayNotes(notesArray) {
     let noteContainer = createNoteContainer();
     document.getElementById('notes').appendChild(noteContainer);
-    for (let i=0; i < notes.length; i++){
+    for (let i=0; i < notesArray.length; i++){
         
         let noteArticle = createNoteArticle(i);
         document.getElementById('noteContainer').appendChild(noteArticle);
         
-        let firstColumn = createFirstColumn(i, notes[i].title);
+        let firstColumn = createFirstColumn(i, notesArray[i].title);
         document.getElementById(i).appendChild(firstColumn);
         
         let secondColumn = createSecondColumn(i);
@@ -35,7 +34,7 @@ export function displayNotes() {
         noteCategory.addEventListener('click', function(){
             const noteC = $('#noteCategory-' + i).dropdown('get value');
             if (noteC !== "") {
-                addCategory(i, noteC);
+               notesArray[i] = addCategory(notesArray[i], noteC);
             }
         });
     }
