@@ -1,4 +1,4 @@
-export function removeNotes() {
+export function checkNote() {
     let check = document.getElementById('noteContainer');
     
     if (check) {
