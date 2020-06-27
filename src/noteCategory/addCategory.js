@@ -1,5 +1,5 @@
-import { notes } from '../index';
-
-export default function addCategoy(id, categoryValue) {
-    notes[id].category = categoryValue;
+export default function addCategory(object, categoryValue) {
+    let objectCategory = object;
+    objectCategory.category = categoryValue;
+    return objectCategory;
 }
