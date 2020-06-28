@@ -2,9 +2,11 @@ import { addNote } from '../src/addNote';
 import * as index from '../src/index';
 import * as check from '../src/checkNote';
 jest.mock('../src/checkNote');
+jest.mock('../src/index');
+jest.mock('../src/displayNotes/index');
+
 
 test('add note', () => {
-    jest.spyOn(index.notes, 'push');
     document.body.innerHTML =
     `<form id="form-add">
     <input type="text" name="noteTitle" id="noteTitle" value="abc">
@@ -18,6 +20,7 @@ test('add note', () => {
     const addButton = document.getElementById('button');
     addButton.click();
 
-    expect(index.notes.push).toHaveBeenCalledWith({title: 'abc'});
+    expect(index.addNoteToArray).toHaveBeenCalledWith("abc");
     expect(check.checkNote).toHaveBeenCalled();
+
 });
