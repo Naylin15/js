@@ -1,10 +1,19 @@
 import { addNote } from './addNote';
+import { displayNotes } from './displayNotes';
+import { checkNote } from './checkNote';
 
 export var notes = [];
+
 document.addEventListener('DOMContentLoaded', function () {
     $('.ui.dropdown').dropdown();
     const form = document.getElementById('form-add');
     form.addEventListener('submit', addNote);
+    
+    const categories = document.getElementById('categories');
+    categories.addEventListener('click', function(){
+        const noteCategory = $('#categories').dropdown('get value');
+        displayByCategories(noteCategory);
+    });
 });
 
 export function changeTitle(i, title) {
@@ -28,8 +37,14 @@ export function removeObjectNote(i) {
 }
 
 
-// function displayByCategories(categoryName) {
-//     var categoryNotes = notes.filter(function(notes){
-//         return notes.category === categoryName;
-//     });
-// }
+function displayByCategories(categoryName) {
+    checkNote();
+    if (categoryName == "all") {
+        displayNotes(notes);
+    } else {
+        let categoryNotes = notes.filter(function(notes) {
+            return notes.category === categoryName;
+        });
+        displayNotes(categoryNotes);
+    }
+}
