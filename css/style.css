@@ -8,7 +8,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #A4224D;
     height: 50px;
     margin-bottom: 20px;
     color: #fff;
@@ -39,4 +38,9 @@ body {
 
 .hide {
     display: none;
+}
+
+.shadow {
+    border: 1px solid gray;
+    box-shadow: 0 0 10px #333;
 }
