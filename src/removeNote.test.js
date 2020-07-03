@@ -1,9 +1,10 @@
 import { removeNote } from '../src/removeNote';
-import { notes } from '../src/index';
-
+import { checkNote } from '../src/checkNote';
+import { displayNotes } from '../src/displayNotes/index';
+jest.mock('../src/checkNote');
+jest.mock('../src/displayNotes/index');
 
 test('remove note', () => {
-    jest.spyOn(notes, 'splice');
 
     document.body.innerHTML =
     '<div id="notes"><article class="article ui two column stackable grid" id="0"><div class="item" id="removeNote-0">Delete</div></article></div>';
@@ -14,5 +15,6 @@ test('remove note', () => {
     let removedNote = document.getElementById('0');
 
     expect(removedNote).toBe(null);
-    expect(notes.splice).toHaveBeenCalledWith(0, 1);
+    expect(checkNote).toHaveBeenCalled();
+    expect(displayNotes).toHaveBeenCalled();
 });
