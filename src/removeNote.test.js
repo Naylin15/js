@@ -8,9 +8,7 @@ test('remove note', () => {
 
     document.body.innerHTML =
     '<div id="notes"><article class="article ui two column stackable grid" id="0"><div class="item" id="removeNote-0">Delete</div></article></div>';
-    const removeNoteEvent = document.getElementById('removeNote-0');
-    removeNoteEvent.addEventListener('click', function(){removeNote(0);});
-    removeNoteEvent.click();
+    removeNote(0);
 
     let removedNote = document.getElementById('0');
 
