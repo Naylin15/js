@@ -12,24 +12,47 @@
 </head>
 <body>
     <header class="main-header">
-        <div>
-            PersonalChallenge
+        <div class="ui three item menu">
+            <a class="item">Personal Challenge</a>
+            <div class="ui floating labeled icon dropdown button item" id="categories">
+                <i class="filter icon"></i>
+                <span class="text">Filter</span>
+                    <div class="menu">
+                    <div class="item" data-value="all">
+                        All
+                    </div>
+                    <div class="item" data-value="important">
+                        Important
+                    </div>
+                    <div class="item" data-value="later">
+                        Later
+                    </div>
+                    <div class="item" data-value="tomorrow">
+                        Tomorrow
+                    </div>
+                    </div>
+            </div>
+            <a class="item">View it on GitHub</a>
         </div>
-        <a href="https://github.com/Naylin15/js">View it on GitHub</a>
     </header>
     <section class="add-note">
-            <form id="form-add">
-                <div class="ui stackable two column centered grid container">
-                    <div class="ui center aligned column">
-                        <div class="ui fluid input">
-                            <input type="text" name="noteTitle" id="noteTitle" placeholder="Add to-do" required>
+        <div class="ui centered grid container shadow">
+            <div class="ui container row">
+                <h2 class="ui header">To-Do List</h2>
+            </div>
+            <div class="ui container row">
+                <div class="ui center aligned form">
+                    <form class="ui form" id="form-add">
+                        <div class="inline fields">
+                                <div class="ui fourteen wide field">
+                                    <input type="text" name="noteTitle" id="noteTitle" placeholder="What's next?" required>
+                                </div>
+                                <button type="submit" class="ui primary button center aligned">Add</button>
                         </div>
-                    </div>
-                    <div class="ui center aligned column">
-                        <button type="submit" class="ui primary button center aligned">Add</button>
-                    </div>
+                    </form>
                 </div>
-            </form>
+            </div>
+        </div>
     </section>
     <section class="ui container" id="notes">
     </section>
