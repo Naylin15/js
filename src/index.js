@@ -16,13 +16,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-export function changeTitle(i, title) {
+export function changeTitle(i, title, notes) {
     let newArray = notes;
     newArray[i].title = title;
     return newArray;
 }
 
-export function addNoteToArray(noteTitle) {
+export function addNoteToArray(noteTitle, notes) {
     let newArray = notes;
     newArray.push({
         title: noteTitle,
@@ -30,7 +30,7 @@ export function addNoteToArray(noteTitle) {
     return newArray;
 }
 
-export function removeObjectNote(i) {
+export function removeObjectNote(i, notes) {
     let newArray = notes;
     newArray.splice(i, 1);
     return newArray;

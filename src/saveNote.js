@@ -1,4 +1,4 @@
-import { changeTitle } from './index';
+import { notes, changeTitle } from './index';
 import { checkNote } from './checkNote';
 import { displayNotes } from './displayNotes';
 
@@ -9,5 +9,5 @@ export function saveNote(parent) {
     document.getElementById("saveButton-" + i).remove();
     document.getElementById("editInput-" + i).remove();
     checkNote();
-    displayNotes(changeTitle(i, newTitle.value));
+    displayNotes(changeTitle(i, newTitle.value, notes));
 }
