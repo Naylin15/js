@@ -12,14 +12,14 @@
   "description": "ToDoList",
   "main": "js/index.js",
   "dependencies": {
-    "semantic-ui": "^2.4.2",
+    "fomantic-ui": "^2.8.6",
     "webpack": "^4.43.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "css-loader": "^3.5.3",
-    "cypress": "^4.6.0",
+    "cypress": "^4.11.0",
     "diff": "^3.5.0",
     "eslint": "^6.8.0",
     "html-loader": "^1.1.0",
@@ -32,8 +32,10 @@
   },
   "scripts": {
     "test": "jest",
+    "cyopen": "cypress open",
     "build": "webpack",
     "start-server": "webpack-dev-server"
+
   },
   "repository": {
     "type": "git",
