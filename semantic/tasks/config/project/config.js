@@ -103,11 +103,13 @@ module.exports = {
 
     if(config.permission) {
       config.hasPermissions = true;
+      config.parsedPermissions = typeof config.permission === 'string' ? parseInt(config.permission, 8) : config.permission;
     }
     else {
       // pass blank object to avoid causing errors
       config.permission     = {};
       config.hasPermissions = false;
+      config.parsedPermissions = {};
     }
 
     /*--------------
@@ -131,6 +133,14 @@ module.exports = {
         ? '{' + config.components.join(',') + '}'
         : config.components[0]
       : '{' + defaults.components.join(',') + '}'
+    ;
+
+    // components that should be built, but excluded from main .css/.js files
+    config.globs.individuals = (typeof config.individuals == 'object')
+      ? (config.individuals.length > 1)
+        ? '{' + config.individuals.join(',') + '}'
+        : config.individuals[0]
+      : undefined
     ;
 
     return config;
